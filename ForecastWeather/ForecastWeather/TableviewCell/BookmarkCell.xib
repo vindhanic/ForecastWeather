@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BookmarkCell" customModule="ForecastWeather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa9-uM-5a9">
+                        <rect key="frame" x="20" y="36.5" width="52.5" height="26.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mks-Z3-5QF">
+                        <rect key="frame" x="353" y="29" width="41" height="43"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8x-Yu-4tu">
+                        <rect key="frame" x="20" y="99" width="394" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="hvU-ic-YFQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="n8x-Yu-4tu" secondAttribute="bottom" id="8uK-nF-I2D"/>
+                    <constraint firstItem="Mks-Z3-5QF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9GJ-Bw-z3C"/>
+                    <constraint firstItem="n8x-Yu-4tu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="NtH-ul-sSQ"/>
+                    <constraint firstItem="qa9-uM-5a9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="P9Z-wf-Sdl"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qa9-uM-5a9" secondAttribute="bottom" constant="25" id="Tsq-6h-P2e"/>
+                    <constraint firstAttribute="trailing" secondItem="n8x-Yu-4tu" secondAttribute="trailing" id="WGu-hZ-53v"/>
+                    <constraint firstItem="qa9-uM-5a9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bRv-zp-CUW"/>
+                    <constraint firstItem="Mks-Z3-5QF" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="bj3-uD-W6f"/>
+                    <constraint firstItem="qa9-uM-5a9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="s0s-J6-7b8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelCityName" destination="qa9-uM-5a9" id="K8f-n0-WjN"/>
+                <outlet property="labelTemperature" destination="Mks-Z3-5QF" id="mZP-3M-oDp"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
