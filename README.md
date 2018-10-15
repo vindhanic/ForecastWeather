@@ -2,7 +2,7 @@
 Forecast Weather is provides weather of a city. User can add city by selecting from map and can save city. App provides 5 day weather forecast, humidity, day info and wind info.
 
 # Features:
-Bookmarked city list with weather information
+Bookmarked city list with weather information \n
 City details with current temperature, humidity, day innformation and sind information
 Add location from google map by clicking and dropping pin
 
