@@ -3,20 +3,20 @@ Forecast Weather is provides weather of a city. User can add city by selecting f
 
 # Features:
 Bookmarked city list with weather information <br />
-City details with current temperature, humidity, day innformation and sind information
-Add location from google map by clicking and dropping pin
+City details with current temperature, humidity, day innformation and sind information <br />
+Add location from google map by clicking and dropping pin <br />
 
 # Tools and Technologies
-Xcode 9.2
-Swift 4.0
-Cocoapods
-Github
-SourceTree
+Xcode 9.2 <br />
+Swift 4.0 <br />
+Cocoapods <br />
+Github <br />
+SourceTree <br />
 
 # Pods
-Alamofire:- For Web API calls
-GoogleMaps:- For google map and location picker
-GooglePlaces:- For getting place information
-AlamofireImage:- For lazy downloading image from url  
+Alamofire:- For Web API calls <br />
+GoogleMaps:- For google map and location picker <br />
+GooglePlaces:- For getting place information <br />
+AlamofireImage:- For lazy downloading image from url <br />
 
 
