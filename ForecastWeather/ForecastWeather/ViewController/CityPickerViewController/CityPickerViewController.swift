@@ -66,18 +66,22 @@ class CityPickerViewController: UIViewController {
     }
     //Adding marker to map for tapped location
     func addMarker(coordinate: CLLocationCoordinate2D) {
-        viewMap.clear()
-        let marker = GMSMarker(position: coordinate)
-        marker.isDraggable = true
-        cityCoordinate = coordinate
-        marker.map = viewMap
-        let location = CLLocation(latitude: marker.position.latitude, longitude: marker.position.longitude)
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         fetchCity(from: location) { (city, error) in
-            if error == nil {
+            if error == nil, city != nil {
+                
+                self.viewMap.clear()
+                let marker = GMSMarker(position: coordinate)
+                marker.isDraggable = true
+                self.cityCoordinate = coordinate
+                marker.map = self.viewMap
+                
+                
                 self.viewModel.createCity(coordinate: location, name: city!, complition: { (result) in
                     self.selectedCity = result
                 })
             }
+            
         }
     }
 }
