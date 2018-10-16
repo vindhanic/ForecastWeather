@@ -43,21 +43,21 @@ class CityWeatherViewController: UIViewController {
     //Get forecast weather data
     func getNextFiveDayWeather() {
         let location = CLLocation(latitude: CLLocationDegrees((city?.weather?.coord?.lat)!), longitude: CLLocationDegrees((city?.weather?.coord?.lon)!))
-        viewModel.getFiveDayWeather(coordinate: location) { (cityWeather) in
+        viewModel.getFiveDayWeather(coordinate: location) { [weak self] (cityWeather) in
             print(cityWeather)
-             self.cityWeather = cityWeather
+            self?.cityWeather = cityWeather
             var array = cityWeather.list
             array = array.map({ (data) -> DataContainer.Response in
                 var new = data
                 new.dt_txt = data.dt_txt?.components(separatedBy: " ").first!                
                 return new
             })
-            var updatedArray = self.cityWeather?.list
+            var updatedArray = self?.cityWeather?.list
             print(array)
             updatedArray = array.removingDuplicates()
-            self.cityWeather?.list = updatedArray!
-            self.cityWeather?.list.removeFirst()
-            self.collectionViewWeather.reloadData()
+            self?.cityWeather?.list = updatedArray!
+            self?.cityWeather?.list.removeFirst()
+            self?.collectionViewWeather.reloadData()
         }
     }
 }
