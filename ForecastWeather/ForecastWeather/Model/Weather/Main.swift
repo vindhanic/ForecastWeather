@@ -12,6 +12,6 @@ struct Main : BaseModel {
 	var humidity : Int?
 	var pressure : Float?
 	var temp : Float?
-	var tempMax : Float?
-	var tempMin : Float?
+	var temp_max : Float?
+	var temp_min : Float?
 }

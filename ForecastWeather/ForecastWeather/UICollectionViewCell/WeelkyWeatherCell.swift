@@ -20,13 +20,13 @@ class WeelkyWeatherCell: UICollectionViewCell {
     var weatherData: DataContainer.Response! {
         didSet {
             labelWeekDay.text = "\(Int((weatherData?.dt)!))"
-            if let maxTemp = weatherData?.main?.tempMax {
+            if let maxTemp = weatherData?.main?.temp_max {
                 labelMaxTemperature.text = "\(Int(maxTemp))° c"
             }
             else {
                 labelMaxTemperature.text = "NA"
             }
-            if let minTemp = weatherData?.main?.tempMin {
+            if let minTemp = weatherData?.main?.temp_min {
                 labelMinTemperature.text = "\(Int(minTemp))° c"
             }
             else {

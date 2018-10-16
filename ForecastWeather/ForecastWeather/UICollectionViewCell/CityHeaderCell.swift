@@ -21,13 +21,13 @@ class CityHeaderCell: UICollectionViewCell {
             labelCityName.text = city.name!
             labelTemperature.text = "\(Int((city.weather?.main?.temp)!))° c"
             labelWeekday.text = getTodayDay()
-            if let maxTemp = city.weather?.main?.tempMax {
+            if let maxTemp = city.weather?.main?.temp_max {
                 labelMaxTemperature.text = "\(Int(maxTemp))° c"
             }
             else {
                 labelMaxTemperature.text = "NA"
             }
-            if let minTemp = city.weather?.main?.tempMin {
+            if let minTemp = city.weather?.main?.temp_min {
                 labelMinTemperature.text = "\(Int(minTemp))° c"
             }
             else {

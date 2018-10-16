@@ -14,10 +14,10 @@ class CityReqeust  {
     //Getting city vise updated data from bookmark view model 
     func updateCity(citys:[City], complition:@escaping (_ citys:[City])->()) {
         var updatedCity = [City]()
-        
-        for (index, city) in citys.enumerated() {
-            let opration = BlockOperation()
-            opration.addExecutionBlock {
+        var index = 0
+        for city in citys {
+            
+            queue.addOperation {
                 let param = DataContainer.request(lat: city.latitude, long: city.longitude)
                 getWeatherList(param: param, success: { (result) in
                     let updated = City(name: city.name, latitude: city.latitude, longitude: city.longitude, weather: result)
@@ -25,10 +25,13 @@ class CityReqeust  {
                     if index == (citys.count - 1) {
                         complition(updatedCity)
                     }
+                    index = index + 1
                 }, failure: { (error) in
                     
                 })
             }
+            
+            
         }
     }
 }
