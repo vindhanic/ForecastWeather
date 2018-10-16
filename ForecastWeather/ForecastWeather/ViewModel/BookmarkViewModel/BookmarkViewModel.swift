@@ -11,12 +11,11 @@ import Foundation
 class BookmarkViewModel {
     var citys = [City]()
     //Getting city list from local disk
-     func fechCityList(complition: voidCloser) {
+     func prepareCityList() {
         guard let container = getObject(objectType: CityContainer.self, key: kCity) else {
             return
         }
         citys = container.citys
-        complition()
     }
     //Save city data to local disk
      func bookMarkCity(city: City, complition: voidCloser) {

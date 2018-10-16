@@ -32,9 +32,9 @@ class BookmarkViewController: UIViewController {
         tableBookmark.register(UINib(nibName: XIBClassName.BookmarkCell, bundle: nil) , forCellReuseIdentifier: CellIdentifier.kBookmarkCellID)
         tableBookmark.rowHeight = UITableViewAutomaticDimension
         tableBookmark.estimatedRowHeight = 100
-        viewModel.fechCityList {}
-        viewModel.updateLiveValue {
-            self.reloadTable()
+        viewModel.prepareCityList()
+        viewModel.updateLiveValue { [weak self] in
+            self?.reloadTable()
         }
     }
     //Reload tableview
@@ -82,8 +82,8 @@ extension BookmarkViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            viewModel.removeobject(index: indexPath.row, complition: {
-               self.reloadTable()
+            viewModel.removeobject(index: indexPath.row, complition: { [weak self] in
+                self?.reloadTable()
             })
         }
     }
